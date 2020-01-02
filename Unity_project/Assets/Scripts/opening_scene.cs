@@ -8,6 +8,8 @@ public class opening_scene : MonoBehaviour
 {
         public Button[] levels;
         private int click = 0;
+        public Animator devText;
+        public Animator userText;
 
         public void levelUpdate(){
             int current = PlayerPrefs.GetInt("level", 0);
@@ -40,10 +42,12 @@ public class opening_scene : MonoBehaviour
 
         private void unlockAll(){
             PlayerPrefs.SetInt("level", 12);
+            devText.Play("dev_text");
         }
 
         private void lockAll(){
             PlayerPrefs.SetInt("level", 0);
+            userText.Play("user_text");
         }
         
 
